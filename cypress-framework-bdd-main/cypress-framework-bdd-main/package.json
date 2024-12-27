@@ -1,0 +1,47 @@
+{
+  "name": "cypress-framework",
+  "version": "1.0.0",
+  "description": "An automated testing framework based on CypressIO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:run": "npx cypress run --browser chrome",
+    "cypress:open": "npx cypress open",
+    "test-login": "npx cypress run --spec 'cypress/integration/webtest/Login.feature' --browser chrome",
+    "test-postsearch": "npx cypress run --spec 'cypress/integration/webtest/PostSearch.feature' --browser chrome",
+    "test-api-get": "npx cypress run --spec 'cypress/integration/apitest/API-GET.feature'",
+    "test-api-post": "npx cypress run --spec 'cypress/integration/apitest/API-POST.feature'",
+    "test-api-put": "npx cypress run --spec 'cypress/integration/apitest/API-PUT.feature'",
+    "test-api-circleci": "npx cypress run --parallel --record --group API-Test --ci-build-id $CIRCLE_BUILD_NUM --spec 'cypress/integration/apitest/*.feature'",
+    "test-web-circleci": "npx cypress run --parallel --record --group WebUI-Test --ci-build-id $CIRCLE_BUILD_NUM --spec 'cypress/integration/webtest/*.feature'"
+  },
+  "keywords": [
+    "WebUI",
+    "RestApi",
+    "Cypress",
+    "BDD",
+    "Cucumber"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trongtuyen96/cypress-framework.git"
+  },
+  "author": "Tuyen Nguyen",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/trongtuyen96/cypress-framework/issues"
+  },
+  "homepage": "https://github.com/trongtuyen96/cypress-framework#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "8.3.0",
+    "cypress-audit": "1.0.0",
+    "cypress-cucumber-preprocessor": "4.2.0",
+    "cypress-mochawesome-reporter": "2.2.1",
+    "cypress-multi-reporters": "1.5.0",
+    "cypress-plugin-snapshots": "1.4.4",
+    "cypress-terminal-report": "3.3.2",
+    "cypress-xpath": "1.6.2",
+    "mocha-junit-reporter": "2.0.0"
+  }
+}

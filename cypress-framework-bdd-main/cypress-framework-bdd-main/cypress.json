@@ -1,0 +1,52 @@
+{
+    "projectId": "ukewho",
+    "baseUrl": "https://www.automatedtestingwithtuyen.com",
+    "env": {
+        "username": "a",
+        "password": "b",
+        "cypress-plugin-snapshots": {
+            "imageConfig": {
+                "createDiffImage": true,
+                "threshold": 0.01,
+                "thresholdType": "percent"
+            },
+            "autoCleanUp": false,
+            "autopassNewSnapshots": true,
+            "diffLines": 3,
+            "excludeFields": [],
+            "ignoreExtraArrayItems": false,
+            "ignoreExtraFields": false,
+            "normalizeJson": true,
+            "prettier": true
+        }
+    },
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "reporterEnabled": "cypress-mochawesome-reporter, mocha-junit-reporter",
+        "mochaJunitReporterReporterOptions": {
+            "mochaFile": "cypress/reports/junit/[hash].xml",
+            "jenkinsMode": true
+        },
+        "cypressMochawesomeReporterReporterOptions": {
+            "charts": true,
+            "reportPageTitle": "My Test Suite",
+            "reportFilename": "Report",
+            "files": [
+                "cypress/reports/mochawesome/*.json"
+            ],
+            "embeddedScreenshots": true,
+            "inlineAssets": true,
+            "timestamp": "mmddyyyy_HHMMss"
+        }
+    },
+    "video": false,
+    "ignoreTestFiles": [
+        "**/__snapshots__/*",
+        "**/__image_snapshots__/*"
+    ],
+    "testFiles": "**/*.feature",
+    "retries": {
+        "runMode": 2,
+        "openMode": 0
+    }
+}

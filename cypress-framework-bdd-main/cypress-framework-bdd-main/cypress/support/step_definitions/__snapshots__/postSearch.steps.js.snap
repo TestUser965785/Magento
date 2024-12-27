@@ -1,0 +1,7 @@
+exports[`Automatedtestingwithtuyen.com login feature > Verify if user is able to login #1`] = `
+<div class="qDqoW" data-testid="container-bg"></div>
+`;
+
+exports[`Automatedtestingwithtuyen.com login feature > Verify if user is able to login #0`] = `
+<div class="qDqoW" data-testid="container-bg"></div>
+`;
